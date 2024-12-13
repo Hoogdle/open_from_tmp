@@ -1,5 +1,5 @@
 // Import necessary modules and components
-import React, { } from 'react';
+import React, {useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/pages/_plants.scss';
 import Footer from './Footer';
@@ -68,32 +68,118 @@ const WeeklyOthers = () => (
 
 // Catalogue Component
 const Catalogue = () => {
+    const [data,setData] = useState({
+        counts : "",
+        main : {
+            features : [],
+            title : "",
+        },
+        plantlists : [
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            }
+            ,
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+            {
+                plantimg : "",
+                rating : "",
+                title : "",
+            },
+        ],
+    })
+
+    useEffect(() => {
+        fetch('http://localhost:8080/Plants')
+          .then((res) => res.json())
+          .then((res) => {
+            setData(res);
+          });
+      },);
+
+    //<finish>
     const navigate = useNavigate();
     const plantCatalogue = [
-        { id: 1, image: './images/1.jpg', title: 'Modern Picture 1', rating: 5 },
-        { id: 2, image: './images/2.jpg', title: 'Modern Picture 2', rating: 4 },
-        { id: 3, image: './images/3.jpg', title: 'Modern Picture 3', rating: 3 },
-        { id: 4, image: './images/4.jpg', title: 'Modern Picture 4', rating: 4 },
-        { id: 5, image: './images/5.jpg', title: 'Modern Picture 5', rating: 4 },
-        { id: 6, image: './images/6.jpg', title: 'Modern Picture 6', rating: 4 },
-        { id: 7, image: './images/7.jpg', title: 'Modern Picture 7', rating: 4 },
-        { id: 8, image: './images/8.jpg', title: 'Modern Picture 8', rating: 4 },
-        { id: 9, image: './images/1.jpg', title: 'Modern Picture 1', rating: 5 },
-        { id: 10, image: './images/2.jpg', title: 'Modern Picture 2', rating: 4 },
-        { id: 11, image: './images/3.jpg', title: 'Modern Picture 3', rating: 3 },
-        { id: 12, image: './images/4.jpg', title: 'Modern Picture 4', rating: 4 },
-        { id: 13, image: './images/5.jpg', title: 'Modern Picture 5', rating: 4 },
-        { id: 14, image: './images/6.jpg', title: 'Modern Picture 6', rating: 4 },
-        { id: 15, image: './images/7.jpg', title: 'Modern Picture 7', rating: 4 },
-        { id: 16, image: './images/8.jpg', title: 'Modern Picture 8', rating: 4 },
-        { id: 17, image: './images/1.jpg', title: 'Modern Picture 1', rating: 5 },
-        { id: 18, image: './images/2.jpg', title: 'Modern Picture 2', rating: 4 },
-        { id: 19, image: './images/3.jpg', title: 'Modern Picture 3', rating: 3 },
-        { id: 20, image: './images/4.jpg', title: 'Modern Picture 4', rating: 4 },
-        { id: 21, image: './images/5.jpg', title: 'Modern Picture 5', rating: 4 },
-        { id: 22, image: './images/6.jpg', title: 'Modern Picture 6', rating: 4 },
-        { id: 23, image: './images/7.jpg', title: 'Modern Picture 7', rating: 4 },
-        { id: 34, image: './images/8.jpg', title: 'Modern Picture 8', rating: 4 },
+        { id: 1, image: data.plantlists[0].plantimg, title: data.plantlists[0].title, rating: data.plantlists[0].rating},
+        // { id: 2, image: data.plantlists[1].plantimg, title: data.plantlists[1].title, rating: Number(data.plantlists[2].rating) },
+        // { id: 3, image: data.plantlists[2].plantimg, title: data.plantlists[2].title, rating: Number(data.plantlists[3].rating) },
+        // { id: 4, image: data.plantlists[3].plantimg, title: data.plantlists[3].title, rating: Number(data.plantlists[4].rating) },
+        // { id: 5, image: data.plantlists[4].plantimg, title: data.plantlists[4].title, rating: Number(data.plantlists[5].rating) },
+        // { id: 6, image: data.plantlists[5].plantimg, title: data.plantlists[5].title, rating: Number(data.plantlists[6].rating) },
+        // { id: 7, image: data.plantlists[6].plantimg, title: data.plantlists[6].title, rating: Number(data.plantlists[7].rating) },
+        // { id: 8, image: data.plantlists[7].plantimg, title: data.plantlists[7].title, rating: Number(data.plantlists[8].rating) },
+        // { id: 9, image: data.plantlists[8].plantimg, title: data.plantlists[8].title, rating: Number(data.plantlists[9].rating)},
+        // { id: 10, image: data.plantlists[9].plantimg, title: data.plantlists[9].title, rating: Number(data.plantlists[10].rating) },
+        // { id: 11, image: data.plantlists[10].plantimg, title: data.plantlists[10].title, rating: Number(data.plantlists[11].rating) },
+        // { id: 12, image: data.plantlists[11].plantimg, title: data.plantlists[11].title, rating: Number(data.plantlists[12].rating) },
+        // { id: 13, image: data.plantlists[12].plantimg, title: data.plantlists[12].title, rating: Number(data.plantlists[13].rating) },
+        // { id: 14, image: data.plantlists[13].plantimg, title: data.plantlists[13].title, rating: Number(data.plantlists[14].rating) },
+        // { id: 15, image: data.plantlists[14].plantimg, title: data.plantlists[14].title, rating: Number(data.plantlists[15].rating) },
     ];
 
     const handleSeeMoreClick = (plantId) => {
@@ -142,8 +228,32 @@ const Catalogue = () => {
     );
 };
 
+// <edit>
 // Plants Component
 const Plants = () => {
+    const [data, setData] = useState({
+        counts: "",
+        main: {
+            plantimg : "",
+            title : "",
+            features: {
+                climate : "",
+                size : "",
+                season : "",
+                f1 : "",
+                f2 : "",
+            },
+            description : "",
+        },
+    });
+
+    useEffect(() => {
+        fetch('http://localhost:8080/Plants')
+          .then((res) => res.json())
+          .then((res) => {
+            setData(res);
+          });
+      },);
 
     return (
         <div className="plants-page">
@@ -163,11 +273,11 @@ const Plants = () => {
                     <hr className="custom-hr" />
                     <div className="weekly_plant">
                         <div className="image_frame">
-                            <img src="/images/1.jpg" alt="Echinocereus Cactus" className="top_plant" />
+                            <img src={data.main.image} alt="Echinocereus Cactus" className="top_plant" />
                             <img src="/images/crown.png" alt="Crown" className="crown_image" />
                         </div>
                         <div className="info_frame">
-                            <h2>Echinocereus Cactus</h2>
+                            <h2>{data.main.title}</h2>
                             <div className="tags">
                                 <span className="badge bg-success">Indoor</span>
                                 <span className="badge bg-success">Cactus</span>
@@ -175,13 +285,13 @@ const Plants = () => {
                             <hr className="custom-hr" />
                             <h4>Features</h4>
                             <ul>
-                                <li>Species: Echinocereus spp.</li>
-                                <li>Size: Varies by species, 4-12 inches in height</li>
-                                <li>Season: Spring or summer</li>
-                                <li>Available in various pot sizes</li>
-                                <li>Carefully packaged for safe delivery</li>
+                                <li>Size: {data.main.features.size}</li>
+                                <li>Season: {data.main.features.season}</li>
+                                <li>Climate : {data.main.features.climate}</li>
+                                <li>{data.main.f1}</li>
+                                <li>{data.main.features.f2}</li>
                             </ul>
-                            <h4>Description</h4>
+                            <h4>{data.main.description}</h4>
                             <p>The Echinocereus Cactus is known for its beauty and resilience. Perfect for indoor and outdoor settings.</p>
                         </div>
                         <WeeklyOthers />
