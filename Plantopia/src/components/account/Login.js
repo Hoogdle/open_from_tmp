@@ -18,9 +18,6 @@ const Login = () => {
         navigate('/Signup'); // Navigate to the signup page
     };
 
-<<<<<<< HEAD
- 
-=======
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent form from refreshing the page
 
@@ -48,7 +45,6 @@ const Login = () => {
             });
     };
 
->>>>>>> 1703d22b5db4881343f28af53f1052f374567f53
     return (
         <div className="login-container container">
             <div className="row align-items-center justify-content-center">
